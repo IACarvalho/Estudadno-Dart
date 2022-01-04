@@ -206,7 +206,10 @@ void main() async {
   // print(cep);
   Future<String> cepFuture = getCepByStreetName('Rua Marcelino de Melo');
 
-  cepFuture.then((result) => cep = result);
+  // causa um no print, pois é uma função que depende de fatores externos, então é necessário usar await
+  // cepFuture.then((result) => cep = result);
+
+  cep = await cepFuturo;
 
   print(cepFuture);
   print(cep);
