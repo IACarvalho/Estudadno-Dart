@@ -99,13 +99,39 @@ class Pesso {
   final String nome;
   final int idade;
   final double peso;
+  final double altura;
 
   // construtor dart
-  Pessoa(this.nome, this.idade, this.peso);
+  Pessoa(this.nome, this.idade, this.peso, this.altura);
 
   // metodo
   String toString() {
     return 'nome: $nome, idade: $idade, peso: $peso';
   }
+
+  double calcularImc(){
+    return peso/(altura * altura);
+  }
+}
+```
+## POO
+Para declarar uma propriedade privadea em dart basta nomear a variável com um underscore(**_**) na frente do nome
+
+Get e set em dart é um pouco diferente de linguagens como java e c#
+```dart
+class Carro{
+	final String modelo;
+	// variável privada
+	String _segredo = 'Muito dinheiro';
+	
+	int _valor = 1000;
+	
+	Carro(this.modelo);
+	
+	// função get
+	int get valorDoCarro => _valor;
+	
+	// setter
+	void setValue(int valor) => +valor = valor;
 }
 ```
