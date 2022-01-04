@@ -89,3 +89,23 @@ while (count > 0) {
   count--;
 }
 ```
+## Metodos e classes
+Criação de classe do dart funciona semelhante ao Java
+É obrigatório eu especificar o retorno de meus métodos em dart, assim como em java ou c#.
+
+```dart
+class Pesso {
+  // Ao usar final passa a responsabilidade de inicializar apra o construtor
+  final String nome;
+  final int idade;
+  final double peso;
+
+  // construtor dart
+  Pessoa(this.nome, this.idade, this.peso);
+
+  // metodo
+  String toString() {
+    return 'nome: $nome, idade: $idade, peso: $peso';
+  }
+}
+```
