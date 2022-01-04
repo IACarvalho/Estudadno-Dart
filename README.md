@@ -196,3 +196,24 @@ pagamento.pagar();
 pagamento = PagarComPix();
 pagamento.pagar();
 ```
+
+## Future, Async e Await
+```dart
+void main() async {
+  String nome = 'Israel Afonso'
+  late String cep;
+  // String cep = getCepByStreetName('Rua Marcelino de Melo');
+  // print(cep);
+  Future<String> cepFuture = getCepByStreetName('Rua Marcelino de Melo');
+
+  cepFuture.then((result) => cep = result);
+
+  print(cepFuture);
+  print(cep);
+}
+// external service
+Future<String> getCepByStreetName(String streetName){
+  // Simulando requisição externa
+  return Future.value('60833622');
+}
+```
