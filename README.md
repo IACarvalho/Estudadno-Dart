@@ -135,3 +135,64 @@ class Carro{
 	void setValue(int valor) => +valor = valor;
 }
 ```
+## Interfaces, Herança e Polimorfismo
+No dart NÃO tem interfaces, no lugar tem abstract classes que funcionam de forma semelhante. Para usar essa "interface" usa a palavra reservada **implements**
+
+```dart
+abstract class Pessoa {
+  String comunicar();
+}
+
+class PessoaEt implements Pessoa {
+  // como estou implementando uma classe abstrata sou obrigado a implementar o comunicar
+  String comunicar() {
+    return 'Olá mundo';
+  }
+}
+
+class PessoaNaoET {
+  String comunicar() {
+    return 'Bom dia';
+  }
+}
+```
+Para usar herança no dart usa o **extends**
+```dart
+class Pessoa{
+  String locomocao(){
+    return 'Andar';
+  }
+}
+
+class Programador extends Pessoa{
+  // mesmo não tendo os métodos eu posso acessar o método locomoção
+}
+```
+
+**Polimorfismo**
+
+```dart
+abstract Pagamento{
+  void pagar();
+}
+
+class PagarComBoleto implements Pagamento {
+  void pagar() {
+    print('Pagar com boleto');
+  }
+}
+
+class PagarComPix implements Pagar {
+  void pagar() {
+    print('Pagar com pix');
+  }
+}
+
+Pagamento pagamento = PagarComBoleto();
+pagamento.pagar();
+
+// pode mudar para uma classe que sua a mesma interface
+
+pagamento = PagarComPix();
+pagamento.pagar();
+```
